@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+
+        <script src="bostrap_res/jquery.min.js" type="text/javascript"></script>
+        <link href="bostrap_res/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="bostrap_res/bootstrap.bundle.min.js" type="text/javascript"></script>
+        <link href="bostrap_res/fontawesome.css" rel="stylesheet" type="text/css"/>
+        <link href="bostrap_res/w3css.css" rel="stylesheet" type="text/css"/>
+
+    </head>
+    <body>
+
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#" style="font-family: Gabriola; font-size: 20pt">Hot Plate</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">About Us <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            FOOD PRICES
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="Pasta_&_Noodles_pl.html">Pasta & Noodles</a>
+                            <a class="dropdown-item" href="Bakery_Products_pl.html">Bakery Products</a>
+                            <!--<div class="dropdown-divider"></div>-->
+                            <!--<a class="dropdown-item" href="#">Something else here</a>-->
+                        </div>
+                    </li>
+
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <a class="btn btn-outline-success my-2 my-sm-0" href="login.php">Login</a>
+                </form>
+
+            </div>
+        </nav>
+
+
+
+
+
+        <br>
+        <br>
+        <br>
+
+        <div class="container">
+
+            <center><h1 style="font-family: Gabriola; font-size: 40pt"><b><u>About Us</u></b></h1></center>
+
+            <div class="row">
+
+                <div class="col-md-5">
+
+                    <img src="img/img1.jpg" style="width: 100%" alt=""/>
+
+                </div>
+                <div class="col-md-7">
+
+                    <p><h4>Food plate is a fine casual eatery featuring hand made specialties and wood-fired Italian American classics. 
+                        We strive to be a neighborhood mainstay and to nourish our friends, families and community with seasonal Italian recipes served simply with care and craft from Italy, and used consistently throughout the world for everyone to enjoy the  true “PastaMania Experience”. We farm and produce our own tomatoes in the northern part of Italy; and before our sauces are shipped out for consumption, they go through an intensive quality control process to ensure product quality. It’s no wonder we smile with such pride when we see our customers enjoying our food</h4></p>
+
+                </div>
+
+
+            </div>
+
+            <center><h1 style="font-family: Gabriola; font-size: 40pt"><b><u>Contact Us</u></b></h1></center>
+
+
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+
+                    </div>
+                    <div class="modal-body">
+                        <form method="GET">
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Name:</label>
+                                <input type="text" class="form-control" id="recipient-name" name="recipient-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-email" class="col-form-label">Your E-mail:</label>
+                                <input type="text" class="form-control" id="recipient-email" name="recipient-email">
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Message:</label>
+                                <textarea class="form-control" id="message-text" name="message-text"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-primary" onclick="sendMail()">Send message</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="row" style="background: #000000; padding: 10px; color: #cccccc">
+
+            <div class="col-md-4">
+
+                <h2>Mobile :</h2>
+                <h4>+94 777366289 / +94 112802236</h4>
+
+            </div>
+            <div class="col-md-4">
+
+                <h2>E mail :</h2>
+                <h4>info@hotplate.com</h4>
+
+            </div>
+            <div class="col-md-4">
+
+                <h2>Address :</h2>
+                <h4>101A , Kema Mawatha, Awilla Kapan</h4>
+
+            </div>
+            <br>
+            <br>
+            <br>
+        </div>
+        <!--<div id="dbError"></div>-->
+
+    </body>
+
+
+    <script type="text/javascript">
+
+        function sendMail() {
+
+            var name = document.getElementById('recipient-name').value;
+            var email = document.getElementById('recipient-email').value;
+            var msg = document.getElementById('message-text').value;
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    alert(this.responseText);
+//                    console.log(this.responseText);
+//                    document.getElementById('dbError').innerHTML=this.responseText;
+
+                    document.getElementById('recipient-name').value = "";
+                    document.getElementById('recipient-email').value = "";
+                    document.getElementById('message-text').value = "";
+
+                }
+            };
+            xhttp.open("GET", "php/sendMail.php?name=" + name + "&email=" + email + "&msg=" + msg, true);
+            xhttp.send();
+
+        }
+
+    </script>
+
+</html>
